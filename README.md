@@ -7,7 +7,8 @@ This game was created to represent and introduce the Wineyard3d engine in the fi
 
 The game is still in development, some features are missing. Currently it can be played on PC in web browsers only.
 
-![Alt text](/screenshots/NeonAce_scr1.png?raw=true "Neon Ace screenshot")
+![Alt text](/screenshots/NeonAce_screenshot1.jpg?raw=true "Neon Ace screenshot 1")
+![Alt text](/screenshots/NeonAce_screenshot2.jpg?raw=true "Neon Ace screenshot 2")
 
 ## Description
 Main goal of the game is to dodge enemies and bullets and stay in the air as long as possible ;). You can also shoot enemy planes. Map layout is generated randomly each time you start the game. 
