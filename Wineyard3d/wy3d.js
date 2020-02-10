@@ -21,8 +21,11 @@ class Wineyard3D {
         renderer = new wy3d_Renderer(this, this.resolution_x, this.resolution_y, this.pp);
         this.RESOURCES = [];
         this.SCENES = [];
+        
+        this.currentScene = "";
 
-        initInput();
+        wy3d_Input = wy3d_InitializeInput("keyboard");
+		this.input = wy3d_Input;
 
         var logoScene = 0;
 
@@ -30,6 +33,9 @@ class Wineyard3D {
 
     addResource(name, path) {
         const newResource = new wy3d_Resource(name, path);
+        if(newResource.getRes() === false)
+			return false;
+        
         this.RESOURCES.push(newResource);
         return newResource;
     }
@@ -61,6 +67,23 @@ class Wineyard3D {
 
         return null;
     }
+    
+    setCurrentScene(scene) {
+		this.currentScene = scene;
+		
+		for (var i = 0; i < this.SCENES.length; i++) {
+            const tmpScene = this.SCENES[i];
+			tmpScene.stop();
+		}
+	}
+	
+	renderScene(scene, gameFunction) {
+		this.setCurrentScene(scene);
+        
+        scene.start();
+        scene.animationRequest = requestAnimationFrame(scene.render.bind(scene, scene.time, gameFunction));
+    }
+    
 
     initWebGL(canvas) {
         var tmp_gl = null;
@@ -99,9 +122,9 @@ class Wineyard3D {
         const t_logo = new wy3d_Texture(t_res_logo);
 
         this.logoScene = this.addScene("LogoScene");
-        const logoObject = this.logoScene.addObject("logoObject", m_logo, t_logo, 0.0, 0.0, -5.0, 0, 20, -90);
+        const logoObject = this.logoScene.addObject("logoObject", m_logo, t_logo, 0.0,0.0,-5.0, 0,20,-90, 1,1,1, 1,1,1, 0.44);
 
-        this.logoScene.renderScene(dummy);
+        this.renderScene(this.logoScene, dummy);
     }
 }
 

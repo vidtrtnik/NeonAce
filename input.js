@@ -1,11 +1,11 @@
 function playerInput() {
-    if (up) {
+    if (wy.input.get("up")) {
         if (playerPos[1] < maxY)
             playerPos[1] += playerSpeed;
 
         if (playerRotX > 60)
             playerRotX -= 3;
-    } else if (down) {
+    } else if (wy.input.get("down")) {
         if (playerPos[1] > minY)
             playerPos[1] -= playerSpeed;
 
@@ -13,16 +13,16 @@ function playerInput() {
             playerRotX += 3;
     }
 
-    if (left) {
+    if (wy.input.get("left")) {
         if (playerPos[0] > minX) {
             playerPos[0] -= playerSpeed / 1.1;
         }
-    } else if (right) {
+    } else if (wy.input.get("right")) {
         if (playerPos[0] < maxX)
             playerPos[0] += playerSpeed;
     }
 
-    if (!down && !up) {
+    if (!wy.input.get("down") && !wy.input.get("up")) {
         if (playerRotX < 90)
             playerRotX += 3;
 
@@ -30,7 +30,7 @@ function playerInput() {
             playerRotX -= 3;
     }
 
-    if (space) {
+    if (wy.input.isDown("space")) {
         var now = new Date().getTime();
         if (now - shootTime >= 1000.0) {
             shootTime = new Date().getTime();

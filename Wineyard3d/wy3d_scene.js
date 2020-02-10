@@ -15,6 +15,9 @@ class wy3d_Scene {
 
         this.camRot = [0.0, 0.0, 0.0];
         this.camPos = [0.0, 0.0, 0.0];
+        
+        this.enabled = 0;
+        this.animationRequest = null;
     }
 
     setBackgroundColor(r, g, b) {
@@ -23,7 +26,7 @@ class wy3d_Scene {
 
     setBackgroundTexture(texture) {
         this.backgroundTexture = texture;
-        this.backgroundQuadRes = renderer.wy3d.addResource("fboQuad", "./models/fboQuad.wy3dm");
+        this.backgroundQuadRes = renderer.wy3d.addResource("fboQuad", "./Wineyard3d/models/fboQuad.wy3dm") || renderer.wy3d.addResource("fboQuad", "./models/fboQuad.wy3dm");
         this.backgroundQuadModel = new wy3d_Model(this.backgroundQuadRes);
         this.backgroundObject = new wy3d_Object("backgroundQuadModel", this.backgroundQuadModel, this.backgroundTexture);
     }
@@ -54,12 +57,12 @@ class wy3d_Scene {
         return this.name;
     }
 
-    addObject(name, model, texture, x, y, z, rx, ry, rz, sx, sy, sz) {
+    addObject(name, model, texture, x, y, z, rx, ry, rz, sx, sy, sz, lr, lg, lb, a) {
         if (name.constructor.name == "wy3d_Object") {
             this.OBJECTS.push(name);
             return name;
         }
-        var tmpObject = new wy3d_Object(name, model, texture, x, y, z, rx, ry, rz, sx, sy, sz);
+        var tmpObject = new wy3d_Object(name, model, texture, x, y, z, rx, ry, rz, sx, sy, sz, lr, lg, lb, a);
         this.OBJECTS.push(tmpObject);
         return tmpObject;
     }
@@ -76,6 +79,17 @@ class wy3d_Scene {
     getObjects() {
         return this.OBJECTS;
     }
+    
+    stop() {
+        this.enabled = 0;
+		//if(this.animationRequest !== null && this.animationRequest !== undefined)
+        cancelAnimationFrame(this.animationRequest);
+		this.animationRequest = null;
+	}
+	
+ 	start() {
+        this.enabled = 1;
+    }
 
     render(time, gameFunction) {
         this.time = new Date().getTime();
@@ -89,15 +103,11 @@ class wy3d_Scene {
             document.getElementById('overlay_ft').innerHTML = ft;
         }
 
-        gameFunction();
+        gameFunction(this);
         this.renderObjects();
-
-        requestAnimationFrame(this.render.bind(this, this.time, gameFunction));
-    }
-
-
-    renderScene(gameFunction) {
-        requestAnimationFrame(this.render.bind(this, this.time, gameFunction));
+        
+        if(this.enabled)
+            this.animationRequest = requestAnimationFrame(this.render.bind(this, this.time, gameFunction));
     }
 
     renderObjects() {

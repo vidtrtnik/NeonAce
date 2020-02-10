@@ -2,14 +2,18 @@ var wy = null;
 
 function start() {
     var canvas = document.getElementById("canvas");
-    wy = new Wineyard3D(canvas, 1280, 720, 1);
+    resx = window.innerWidth * 0.85;
+    resy = window.innerHeight * 0.85;
+    canvas.width = resx;
+    canvas.height = resy;
 
+    wy = new Wineyard3D(canvas, resx, resy, 1);
     loadResources(wy);
 
     scene = wy.addScene("level1");
     scene.setBackgroundTexture(t_bckg1);
 
-    scene.renderScene(gameFunction);
+    wy.renderScene(scene, gameFunction);
 }
 
 function gameFunction() {
@@ -100,8 +104,9 @@ function moveWorld() {
         pBullets[i].position[0] += playerSpeed * 1.66;
 
     for (var i = 0; i < explosions.length; i++) {
-        explosions[i].addLightning(0.033, 0.033, 0.033);
+        explosions[i].addLightning(0.05, 0.05, 0.05);
         explosions[i].addScale(0.05, 0.05, 0.05);
+        explosions[i].addOpacity(-0.015);
     }
 
 }
