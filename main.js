@@ -51,9 +51,18 @@ function gameFunction() {
     for (var i = 0; i < explosions.length; i++)
         scene.addObject(explosions[i]);
 
-    scene.addObject("Player", m_player, t_player, playerPos[0], playerPos[1], playerPos[2], playerRotX, playerRotY, playerRotZ, 0.1, 0.1, 0.1);
+    if (!playerDown)
+        scene.addObject("Player", m_player, t_player, playerPos[0], playerPos[1], playerPos[2], playerRotX, playerRotY, playerRotZ, 0.1, 0.1, 0.1);
 
-    collisionDetection();
+    if (!playerDown)
+        collisionDetection();
+
+    if (playerDown) {
+        if (counter > 120)
+            initDefault();
+
+        counter++;
+    }
 }
 
 function moveWorld() {

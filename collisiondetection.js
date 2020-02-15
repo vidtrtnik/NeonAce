@@ -6,6 +6,7 @@ function collisionDetection() {
                 generateExplosion(playerPos);
                 generateExplosion(enemy.position);
                 enemies = delObj(enemies, i);
+                playerDown = true;
             }
     }
 
@@ -15,6 +16,7 @@ function collisionDetection() {
             if (playerPos[1] + enemy.dimensions[1] / 2 >= (bullet.position[1] - bullet.dimensions[1] / 2) && playerPos[1] - enemy.dimensions[1] / 2 <= (bullet.position[1] + bullet.dimensions[1] / 2)) {
                 generateExplosion(playerPos);
                 bullets = delObj(bullets, i);
+                playerDown = true;
             }
     }
 

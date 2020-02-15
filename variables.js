@@ -31,6 +31,8 @@ var prev_progress = -1;
 var progress = 0.0;
 var scroll_pos = 0.0;
 
+var playerDown = false;
+
 var speedX = 0.0055;
 
 var time;
@@ -45,3 +47,27 @@ var bullets = []
 var pBullets = []
 var explosions = []
 var tExplosions = []
+
+var counter = 0;
+
+function initDefault() {
+    camRotX = 0.0;
+    camRotY = 0.0;
+    playerRotX = 90.0;
+    playerRotY = 0.0;
+    playerRotZ = 0.0;
+    playerPos = [-5.0, 0.0, pZ];
+    monumentDrawn = false;
+    prev_progress = -1;
+    progress = 0.0;
+    scroll_pos = 0.0;
+    playerDown = false;
+    shootTime = 0.0;
+    layout = [];
+    enemies = [];
+    bullets = [];
+    pBullets = [];
+    explosions = [];
+    tExplosions = [];
+    counter = 0;
+}
