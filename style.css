@@ -1,66 +1,65 @@
 body {
-    height: 100vh;
-    margin: 0;
+  height: 100vh;
+  margin: 0;
 }
 
 #gradient {
-    background-image: linear-gradient(to bottom right, goldenrod, yellow, gold);
+  background-image: linear-gradient(to bottom right, goldenrod, yellow, gold);
 }
 
 #overlay {
-    position: absolute;
-    left: 7px;
-    top: 7px;
-    background-color: rgba(0, 0, 0, 0.66);
-    color: white;
-    font-family: monospace;
-    font-size: 18px;
-    padding: 1em;
-    border-radius: 1em;
-    border: 3px solid #ffffff;
-    text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white;
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  background-color: rgba(0, 0, 0, 0.66);
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  padding: 1em;
+  border-radius: 1em;
+  border: 3px solid #ffffff;
+  text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white;
 }
 
 .container {
-    position: absolute;
-    margin: auto;
-    top: 50px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 85vw;
-    height: 85vh;
+  position: absolute;
+  margin: auto;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 85vw;
+  height: 85vh;
 }
 
 a {
-    margin: auto;
-    color: Fuchsia;
-    align: "center";
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
+  margin: auto;
+  color: Fuchsia;
+  align: "center";
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
 }
 
 a:link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    color: aqua;
-    text-decoration: underline;
+	color: aqua;
+  text-decoration: underline;
 }
 
 h1 {
-    margin: auto;
-    color: Fuchsia;
-    align: "center";
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
+  margin: auto;
+  color: Fuchsia;
+  align: "center";
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
 }
-
 h2 {
-    margin: auto;
-    align: "center";
-    color: aqua;
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
+  margin: auto;
+  align: "center";
+  color: aqua;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
 }

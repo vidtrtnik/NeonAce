@@ -25,6 +25,10 @@ var res_t_particles;
 
 var res_t_logo;
 var res_t_bckg1;
+var res_t_bckg2;
+
+var res_t_choiceStart;
+var res_t_choiceGithub;
 
 var m_cube;
 var m_player;
@@ -54,6 +58,9 @@ var t_particles;
 var t_neonacelogo;
 var t_wy3dlogo;
 var t_bckg1;
+var t_bckg2;
+var t_choiceStart;
+var t_choiceGithub;
 
 function loadResources(wy) {
     res_m_cube = wy.addResource("res_m_cube", "./models/cube.wy3dm");
@@ -84,6 +91,10 @@ function loadResources(wy) {
     res_t_wy3dlogo = wy.addResource("res_t_logo", "./textures/wineyard3d_logo.wy3dt");
     res_t_neonacelogo = wy.addResource("res_t_logo", "./textures/neonace_logo.wy3dt");
     res_t_bckg1 = wy.addResource("res_t_bckg1", "./textures/background.wy3dt");
+    res_t_bckg2 = wy.addResource("res_t_bckg2", "./textures/background2.wy3dt");
+    
+    res_t_choiceStart = wy.addResource("res_t_choiceStart", "./textures/choiceStart.wy3dt");
+    res_t_choiceGithub = wy.addResource("res_t_choiceGithub", "./textures/choiceGithub.wy3dt");
 
     m_cube = new wy3d_Model(res_m_cube);
     m_player = new wy3d_Model(res_m_player);
@@ -113,4 +124,7 @@ function loadResources(wy) {
     t_wy3dlogo = new wy3d_Texture(res_t_wy3dlogo);
     t_neonacelogo = new wy3d_Texture(res_t_neonacelogo);
     t_bckg1 = new wy3d_Texture(res_t_bckg1);
+    t_bckg2 = new wy3d_Texture(res_t_bckg2);
+    t_choiceStart = new wy3d_Texture(res_t_choiceStart);
+    t_choiceGithub = new wy3d_Texture(res_t_choiceGithub);
 }

@@ -1,61 +1,63 @@
 <html>
 
 <head>
-    <title>Neon Ace v0.0.1</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+  <title>Neon Ace v0.0.1</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
 
-    <script src="./Wineyard3d/3rdparty/pako.js"></script>
-    <script src="./Wineyard3d/3rdparty/UPNG.js"></script>
-    <script src="./Wineyard3d/3rdparty/gl-matrix.js"></script>
+  <script src="./Wineyard3d/3rdparty/pako.js"></script>
+  <script src="./Wineyard3d/3rdparty/UPNG.js"></script>
+  <script src="./Wineyard3d/3rdparty/gl-matrix.js"></script>
 
-    <script src="./Wineyard3d/wy3d_vars.js"></script>
-    <script src="./Wineyard3d/wy3d_postprocessing.js"></script>
-    <script src="./Wineyard3d/wy3d_input.js"></script>
-    <script src="./Wineyard3d/wy3d_object.js"></script>
-    <script src="./Wineyard3d/wy3d_model.js"></script>
-    <script src="./Wineyard3d/wy3d_texture.js"></script>
-    <script src="./Wineyard3d/wy3d_resources.js"></script>
-    <script src="./Wineyard3d/wy3d_math.js"></script>
-    <script src="./Wineyard3d/wy3d_shader.js"></script>
-    <script src="./Wineyard3d/wy3d_scene.js"></script>
-    <script src="./Wineyard3d/wy3d_renderer.js"></script>
-    <script src="./Wineyard3d/wy3d.js"></script>
+  <script src="./Wineyard3d/wy3d_vars.js"></script>
+  <script src="./Wineyard3d/wy3d_postprocessing.js"></script>
+  <script src="./Wineyard3d/wy3d_input.js"></script>
+  <script src="./Wineyard3d/wy3d_object.js"></script>
+  <script src="./Wineyard3d/wy3d_model.js"></script>
+  <script src="./Wineyard3d/wy3d_texture.js"></script>
+  <script src="./Wineyard3d/wy3d_resources.js"></script>
+  <script src="./Wineyard3d/wy3d_math.js"></script>
+  <script src="./Wineyard3d/wy3d_shader.js"></script>
+  <script src="./Wineyard3d/wy3d_scene.js"></script>
+  <script src="./Wineyard3d/wy3d_renderer.js"></script>
+  <script src="./Wineyard3d/wy3d.js"></script>
 
-    <script src="./resources.js"></script>
-    <script src="./variables.js"></script>
-    <script src="./collisiondetection.js"></script>
-    <script src="./generator.js"></script>
-    <script src="./input.js"></script>
-    <script src="./maplayout.js"></script>
-    <script src="./main.js"></script>
+  <script src="./resources.js"></script>
+  <script src="./variables.js"></script>
+  <script src="./collisiondetection.js"></script>
+  <script src="./generator.js"></script>
+  <script src="./input.js"></script>
+  <script src="./maplayout.js"></script>
+  <script src="./game.js"></script>
+  <script src="./mainmenu.js"></script>
+  <script src="./main.js"></script>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="NeonAce, Wineyard3d game">
-    <meta name="keywords" content="HTML,WebGL,Wineyard3d,NeonAce">
-    <meta name="author" content="https://github.com/vidtrtnik">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="description" content="NeonAce, Wineyard3d game">
+  <meta name="keywords" content="HTML,WebGL,Wineyard3d,NeonAce">
+  <meta name="author" content="https://github.com/vidtrtnik">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body id="gradient" onload=start()>
-    <h1 align="center" id="header">
-        <a href="https://www.github.com/vidtrtnik/NeonAce">Neon Ace - v0.0.1</a>
-    </h1>
-    <h2 align="center" id="header2">
-        <a href="https://www.github.com/vidtrtnik">https://www.github.com/vidtrtnik</a>
-    </h2>
-
-    <div class="container">
-        <canvas id="canvas" width="85vw" height="85vh"></canvas>
-        <div id="overlay">
-            ..:: <b>Neon Ace</b> ::..<br>
-            ::::::::::::::::::<br><br>
-            version 0.0.1<br>
-            using Wineyard3d<br><br>
-            Vid Trtnik, 2019<br><br>
-            <div>FPS: <span id="overlay_fps"></span></div>
-            <div>FT: <span id="overlay_ft"></span></div>
-        </div>
+  <h1 align="center" id="header">
+    <a href="https://www.github.com/vidtrtnik/NeonAce">Neon Ace - v0.0.1</a>
+  </h1>
+  <h2 align="center" id="header2">
+	<a href="https://www.github.com/vidtrtnik">https://www.github.com/vidtrtnik</a>
+  </h2>
+	
+  <div class="container">
+    <canvas id="canvas" width="85vw" height="85vh"></canvas>
+    <div id="overlay">
+      ..:: <b>Neon Ace</b> ::..<br>
+      ::::::::::::::::::<br><br>
+      version 0.0.1<br>
+      using Wineyard3d<br><br>
+      Vid Trtnik, 2019<br><br>
+      <div>FPS: <span id="overlay_fps"></span></div>
+      <div>FT: <span id="overlay_ft"></span></div>
     </div>
+  </div>
 </body>
 
 </html>
