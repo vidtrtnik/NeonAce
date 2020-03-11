@@ -70,4 +70,6 @@ function initDefault() {
   explosions = [];
   tExplosions = [];
   counter = 0;
+
+  game_Scene.grayscale = false;
 }

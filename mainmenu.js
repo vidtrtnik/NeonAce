@@ -1,6 +1,5 @@
 var scaleCoef = 0.005;
 var selection = 1;
-var pressTime = null;
 var startGame = false;
 
 var rotx = 0;
@@ -23,8 +22,6 @@ function createMainMenuScene() {
   mainmenu_Scene.addObject(wy3dlogo);
   mainmenu_Scene.addObject(choice1);
   mainmenu_Scene.addObject(choice2);
-
-  pressTime = new Date().getTime();
 }
 
 function mainMenu_gameFunction() {
@@ -34,7 +31,7 @@ function mainMenu_gameFunction() {
   choice2.setLightning(1, 1, 1);
   var choice = null;
 
-  mainmenu_Scene.addBackgroundScroll(0.0, 0.005);
+  mainmenu_Scene.addBackgroundScroll(0.0, 0.002);
 
   if (selection === 1) {
     choice2.setLightning(0.5, 0.5, 0.5);
