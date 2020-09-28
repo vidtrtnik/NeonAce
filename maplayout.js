@@ -56,7 +56,7 @@ function checkIfOOB() {
 
   for (var i = 0; i < pBullets.length; i++) {
     pBullets[i].addRotation(5, 0, 0)
-    if (pBullets[i].position[0] > 10.0)
+    if (pBullets[i].position[0] > 15.0)
       pBullets = delObj(pBullets, i);
   }
 

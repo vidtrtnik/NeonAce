@@ -33,6 +33,8 @@ function collisionDetection() {
           generateExplosion(enemy.position);
           enemies = delObj(enemies, j);
           pBullets = delObj(pBullets, i);
+          score++;
+          document.getElementById("overlay_score").innerHTML = "Score: " + score;
         }
     }
   }

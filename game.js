@@ -45,6 +45,7 @@ function gameFunction() {
     collisionDetection();
 
   if (playerDown) {
+    score = 0;
     game_Scene.grayscale = true;
     game_Scene.setGrayscale(0.75 - counter / 100, 0.75 - counter / 100, 0.75 - counter / 100);
     if (counter > 120)

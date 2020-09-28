@@ -49,6 +49,9 @@ var explosions = []
 var tExplosions = []
 
 var counter = 0;
+var score = 0;
+
+var mouseEnabled = 0;
 
 function initDefault() {
   camRotX = 0.0;

@@ -27,7 +27,7 @@ function generateBullets() {
 }
 
 function generateBuildings() {
-  for (var i = 0; i < Math.floor(5 + Math.random() * 12); i++) {
+  for (var i = 0; i < Math.floor(5 + Math.random() * 7); i++) {
     r = Math.random() * 3;
 
     var building;

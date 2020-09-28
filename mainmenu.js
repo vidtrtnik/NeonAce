@@ -90,4 +90,9 @@ function menuInput() {
 
   if (selection < 1)
     selection = 2;
+
+  if (wy.input.isDown("P")) {
+    mouseEnabled = !mouseEnabled;
+    document.getElementById("overlay_mouse").innerHTML = mouseEnabled | 0;
+  }
 }

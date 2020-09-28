@@ -16,5 +16,7 @@ function start() {
   createMainMenuScene();
   createGameScene();
 
+  document.getElementById("overlay_mouse").innerHTML = mouseEnabled | 0;
+
   wy.renderScene(mainmenu_Scene, mainMenu_gameFunction);
 }

@@ -35,7 +35,6 @@ function getBlob(path) {
 }
 
 function getFile(url, type, callback) {
-  console.log("getFile: " + url);
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url, false);
   xhr.overrideMimeType("text/plain; charset=x-user-defined");

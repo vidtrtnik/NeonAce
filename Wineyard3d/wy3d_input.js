@@ -41,14 +41,24 @@ class wy3d_Key {
 }
 
 class wy3d_InputClass {
-  constructor() {
+  constructor(canvas) {
+    this.canvas = canvas;
     this.KEYS = [];
+    this.MOUSE_COORDS = [0, 0];
+    this.MOUSE_COORDS_CANVAS = [0, 0];
+    this.MOUSE_CLICK = false;
+
     var up = new wy3d_Key("up", 38);
     var down = new wy3d_Key("down", 40);
     var left = new wy3d_Key("left", 37);
     var right = new wy3d_Key("right", 39);
     var space = new wy3d_Key("space", 32);
     var enter = new wy3d_Key("enter", 13);
+    var k1 = new wy3d_Key("1", 49);
+    var k2 = new wy3d_Key("2", 50);
+    var kF = new wy3d_Key("F", 70);
+    var kG = new wy3d_Key("G", 71);
+    var kP = new wy3d_Key("P", 80);
 
     this.KEYS.push(up);
     this.KEYS.push(down);
@@ -56,9 +66,17 @@ class wy3d_InputClass {
     this.KEYS.push(right);
     this.KEYS.push(space);
     this.KEYS.push(enter);
+    this.KEYS.push(k1);
+    this.KEYS.push(k2);
+    this.KEYS.push(kF);
+    this.KEYS.push(kG);
+    this.KEYS.push(kP);
 
     document.addEventListener('keydown', keyDownHandler, false);
     document.addEventListener('keyup', keyUpHandler, false);
+    document.addEventListener('mousemove', mousePosHandler, false);
+    document.addEventListener('click', mouseClickHandler, false);
+    this.canvas.addEventListener('mousemove', mousePosCanvasHandler, false);
   }
 
   isDown(name) {
@@ -78,8 +96,8 @@ class wy3d_InputClass {
   }
 }
 
-function wy3d_InitializeInput(controllerType) {
-  return new wy3d_InputClass();
+function wy3d_InitializeInput(canvas) {
+  return new wy3d_InputClass(canvas);
 }
 
 function keyDownHandler(event) {
@@ -97,4 +115,21 @@ function keyUpHandler(event) {
     if (key.keyCode == event.keyCode)
       key.keyUp();
   }
+}
+
+function mousePosHandler(event) {
+    var mouseCoords = wy3d_Input.MOUSE_COORDS;
+    mouseCoords[0] = event.pageX;
+    mouseCoords[1] = event.pageY;
+}
+
+function mouseClickHandler(event) {
+  wy3d_Input.MOUSE_CLICK = true;
+}
+
+function mousePosCanvasHandler(event) {
+  var mouseCoordsCanvas = wy3d_Input.MOUSE_COORDS_CANVAS;
+  var bcr = wy3d_Input.canvas.getBoundingClientRect();
+  mouseCoordsCanvas[0] = event.clientX - bcr.left;
+  mouseCoordsCanvas[1] = event.clientY - bcr.top;
 }
