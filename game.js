@@ -7,7 +7,7 @@ function gameFunction() {
   game_Scene.addBackgroundScroll(speedX / 10, 0.0);
   scroll_pos += speedX;
 
-  progress = Math.floor(scroll_pos / 2);
+  progress = Math.floor(scroll_pos / 2) % 10;
   if (prev_progress != progress) {
     levelLayout(progress);
     prev_progress = progress;
@@ -46,6 +46,7 @@ function gameFunction() {
 
   if (playerDown) {
     score = 0;
+    document.getElementById("overlay_score").innerHTML = "Score: " + score;
     game_Scene.grayscale = true;
     game_Scene.setGrayscale(0.75 - counter / 100, 0.75 - counter / 100, 0.75 - counter / 100);
     if (counter > 120)

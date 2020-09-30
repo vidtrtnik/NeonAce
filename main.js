@@ -5,7 +5,7 @@ var game_Scene = null;
 
 function start() {
   var canvas = document.getElementById("canvas");
-  resy = window.innerHeight * 0.85;
+  resy = window.innerHeight * 0.87;
   resx = resy * (16 / 9);
   canvas.width = resx;
   canvas.height = resy;

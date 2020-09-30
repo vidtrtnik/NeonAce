@@ -7,6 +7,7 @@ var m_building1;
 var m_building2;
 var m_planet;
 var m_particles;
+var m_tree1;
 
 var t_cube;
 var t_player;
@@ -22,6 +23,7 @@ var t_planet1;
 var t_planet2;
 var t_planet3;
 var t_particles;
+var t_tree1;
 
 var t_neonacelogo;
 var t_neonacelogo2;
@@ -41,6 +43,7 @@ function loadResources(wy) {
   m_building2 = new wy3d_Model(wy, "./models/building2.wy3dm");
   m_planet = new wy3d_Model(wy, "./models/planet.wy3dm");
   m_particles = new wy3d_Model(wy, "./models/particles.wy3dm");
+  m_tree1 = new wy3d_Model(wy, "./models/tree1.wy3dm");
 
   t_cube = new wy3d_Texture(wy, "./textures/cube.wy3dt");
   t_player = new wy3d_Texture(wy, "./textures/player.wy3dt");
@@ -52,10 +55,13 @@ function loadResources(wy) {
   t_ground = new wy3d_Texture(wy, "./textures/ground.wy3dt");
   t_building1 = new wy3d_Texture(wy, "./textures/building1.wy3dt");
   t_building2 = new wy3d_Texture(wy, "./textures/building2.wy3dt");
+  t_building3 = new wy3d_Texture(wy, "./textures/building3.wy3dt");
+  t_building4 = new wy3d_Texture(wy, "./textures/building4.wy3dt");
   t_planet1 = new wy3d_Texture(wy, "./textures/planet1.wy3dt");
   t_planet2 = new wy3d_Texture(wy, "./textures/planet2.wy3dt");
   t_planet3 = new wy3d_Texture(wy, "./textures/planet3.wy3dt");
   t_particles = new wy3d_Texture(wy, "./textures/particles.wy3dt");
+  t_tree1 = new wy3d_Texture(wy, "./textures/tree1.wy3dt");
 
   t_wy3dlogo = new wy3d_Texture(wy, "./textures/wineyard3d_logo.wy3dt");
   t_neonacelogo = new wy3d_Texture(wy, "./textures/neonace_logo.wy3dt");

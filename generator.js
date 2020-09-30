@@ -28,16 +28,27 @@ function generateBullets() {
 
 function generateBuildings() {
   for (var i = 0; i < Math.floor(5 + Math.random() * 7); i++) {
-    r = Math.random() * 3;
+    r = Math.random() * 4;
 
     var building;
 
-    if (r <= 1.5)
+    if (r < 1)
       building = new wy3d_Object("building" + String(i), m_building1, t_building1, 35 + groundObjectsPos[0] + Math.random() * 25, groundObjectsPos[1], -12.0 + groundObjectsPos[2] + Math.random() * 25, 90, 0, 0, 1, 1 + Math.random() * 0.2, 1);
-    else
+    else if (r < 2)
       building = new wy3d_Object("building" + String(i), m_building2, t_building2, 35 + groundObjectsPos[0] + Math.random() * 25, groundObjectsPos[1], -12.0 + groundObjectsPos[2] + Math.random() * 25, 90, 0, 0, 1, 1 + Math.random() * 0.1, 1);
+    else if (r < 3)
+      building = new wy3d_Object("building" + String(i), m_building1, t_building3, 35 + groundObjectsPos[0] + Math.random() * 25, groundObjectsPos[1], -12.0 + groundObjectsPos[2] + Math.random() * 25, 90, 0, 0, 1, 1 + Math.random() * 0.1, 1);
+    else if (r < 4)
+      building = new wy3d_Object("building" + String(i), m_building2, t_building4, 35 + groundObjectsPos[0] + Math.random() * 25, groundObjectsPos[1], -12.0 + groundObjectsPos[2] + Math.random() * 25, 90, 0, 0, 1, 1 + Math.random() * 0.1, 1);
 
     layout.push(building);
+  }
+}
+
+function generateTrees() {
+  for (var i = 0; i < Math.floor(Math.random() * 5); i++) {
+    var tree1 = new wy3d_Object("tree" + String(i), m_tree1, t_tree1, 35 + groundObjectsPos[0] + Math.random() * 25, groundObjectsPos[1] - 3, -12.0 + groundObjectsPos[2] + Math.random() * 25, 90, 0, 0, 1.5,1.5,1.5);
+    layout.push(tree1);
   }
 }
 

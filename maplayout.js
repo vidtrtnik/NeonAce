@@ -1,6 +1,4 @@
 function levelLayout(p) {
-  if (p >= 10)
-    return;
 
   if (!monumentDrawn)
     drawMonument()
@@ -14,10 +12,10 @@ function levelLayout(p) {
   var ground2 = new wy3d_Object("ground", m_ground, t_ground, groundPos[0] + 25, groundPos[1], groundPos[2], 0, 0, 0, 25, 20, 20);
   layout.push(ground2);
   if (h1 == 1) {
-    var planet = new wy3d_Object("planetObj1", m_planet, t_planet1, 85.0, 7.0, -80.0, 0, 0, 0, 25, 25, 25, 0.2, 0.2, 0.2);
+    var planet = new wy3d_Object("planetObj1", m_planet, t_planet1, 85.0, 7.0, -80.0, 0, 0, 0, 21, 21, 21, 0.2, 0.2, 0.2 + Math.random() * 0.5);
     layout.push(planet);
   } else if (h1 == 2) {
-    var planet = new wy3d_Object("planetObj2", m_planet, t_planet2, 75.0, 15.0, -80.0, 0, 0, 0, 18, 18, 18, 0.2, 0.2, 0.2);
+    var planet = new wy3d_Object("planetObj2", m_planet, t_planet2, 75.0, 15.0, -80.0, 0, 0, 0, 18, 18, 18, 0.2 + Math.random() * 0.33, 0.2, 0.2 + Math.random() * 0.33);
     layout.push(planet);
   } else if (h1 == 3) {
     var planet = new wy3d_Object("planetObj3", m_planet, t_planet3, 5.0, 17.0, -80.0, 10, 0, 10, 15, 15, 15, 0.2, 0.2, 0.2);
@@ -26,6 +24,7 @@ function levelLayout(p) {
 
   if (h2 == 1) {
     generateBuildings();
+    generateTrees();
   }
 }
 

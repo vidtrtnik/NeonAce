@@ -36,7 +36,8 @@ var playerDown = false;
 var speedX = 0.0055;
 
 var time;
-var shootTime = 0.0;
+var shootTime1 = 0.0;
+var shootTime2 = 0.0;
 
 var maxBullets = 4;
 var maxEnemies = 6;

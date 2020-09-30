@@ -95,4 +95,12 @@ function menuInput() {
     mouseEnabled = !mouseEnabled;
     document.getElementById("overlay_mouse").innerHTML = mouseEnabled | 0;
   }
+
+  if (wy.input.isDown("1")) {
+    mainmenu_Scene.setFxaa(!mainmenu_Scene.fxaa);
+  }
+
+  if (wy.input.isDown("2")) {
+    wy.setPP(!wy.pp);
+  }
 }
