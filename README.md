@@ -21,5 +21,5 @@ The main goal of the game is to dodge the enemies and bullets and stay in the ai
 - <b>1:</b> Toggle FXAA on/off
 - <b>2:</b> Toggle Post-processing on/off
 
-<i>Version: 0.2</i>  
+<i>Version: 0.2a</i>  
 <b>Author: Vid Trtnik</b>

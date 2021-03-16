@@ -104,9 +104,9 @@ function moveWorld() {
     pBullets[i].position[0] += playerSpeed * 1.66;
 
   for (var i = 0; i < explosions.length; i++) {
-    explosions[i].addLightning(0.05, 0.05, 0.05);
-    explosions[i].addScale(0.05, 0.05, 0.05);
-    explosions[i].addOpacity(-0.015);
+    explosions[i].addLightning(0.06, 0.06, 0.05);
+    explosions[i].addScale(0.06, 0.06, 0.06);
+    explosions[i].addOpacity(-0.03);
   }
 
 }
